@@ -1,55 +1,55 @@
-# CodeAlpha_DockerWebServer
-Step 1 — Check Docker Engine
-Step 2 — Check whether Docker can run containers
-Step 3 — Build your CodeAlpha project
+# CodeAlpha Docker Web Server
 
+# Project Overview
 
+This project demonstrates how to containerize and run a web server using Docker and Nginx. A custom HTML webpage is served from an Nginx container and accessed through a browser on the local machine.
 
+*Technologies: Docker, Dockerfile, Nginx, HTML, Windows CMD
 
-Docker container running Nginx
+# Architecture
 
-Host port 8080 → container port 80
-Nginx serves your custom HTML webpage.
+Browser (`localhost:8080`) → Docker port mapping (`8080:80`) → Nginx container → Custom HTML webpage
 
-Project Creation Steps
-
-Step 1 — Create your project folder
+# Project Structure
 DockerWebServer
-cd DockerWebServer
-mkdir screenshots
-This creates your project folder and a folder for screenshots.
+├── Dockerfile
+├── index.html
+├── README.md
+├── .gitignore
+└── screenshots
+    ├── website-working.png
+    └── container-running.png
 
+# Implementation
+1. Build the Docker Image
+   
+docker build -t codealpha-webserver:1.0 .
 
-Step 2 — Create website
-Create File
-notepad index.html
+2. Run the Container
+docker run -d --name codealpha-nginx -p 8080:80 --restart unless-stopped codealpha-webserver:1.0
 
-Step 3 — Create the Dockerfile
-Create Dockerfile 
-notepad Dockerfile
+3. Access the Website
 
-Step 4 — Build Docker image
-Wait for the build to finish. You should see a successful build result.
-Verify that your image exists:
+Open ip address in your browser
 
-Step 5 - Docker images
-Look for codealpha-webserver in the output.
+4. Verify the Container
+docker ps
+docker logs codealpha-nginx
+docker stats --no-stream codealpha-nginx
+docker inspect codealpha-nginx
 
-Step 6 — Run the web server container
+5. Manage the Container
+docker stop codealpha-nginx
+docker start codealpha-nginx
 
+After restarting the container, refresh the browser to verify that the webpage is accessible.
 
+# Key Learnings
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- Docker images and containers
+- Writing a Dockerfile
+- Running Nginx in a container
+- Port mapping between host and container
+- Container lifecycle management
+- Viewing logs and monitoring resource usage
+- Basic troubleshooting of containerized applications
