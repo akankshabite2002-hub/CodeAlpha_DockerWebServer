@@ -1,2 +1,8 @@
-# Google App Engine generated folder
-appengine-generated/
+# Operating system files
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Local environment files
+.env
+.env.*
