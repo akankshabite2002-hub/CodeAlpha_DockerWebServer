@@ -1,5 +1,3 @@
-
-
 FROM nginx:alpine
 
 LABEL project="CodeAlpha Docker Web Server"
