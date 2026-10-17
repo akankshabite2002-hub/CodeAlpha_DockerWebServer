@@ -3,10 +3,15 @@ Step 1 — Check Docker Engine
 Step 2 — Check whether Docker can run containers
 Step 3 — Build your CodeAlpha project
 
+
+
+
 Docker container running Nginx
 
 Host port 8080 → container port 80
 Nginx serves your custom HTML webpage.
+
+Project Creation Steps
 
 Step 1 — Create your project folder
 DockerWebServer
